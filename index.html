@@ -12,8 +12,26 @@
             <h1 class="text-2xl text-center text-white">Welcome to the Library</h1>
         </header>
         <h3>Books available</h3>
-        <button type="button">Add Book</button>
-        <button type="button">Remove Book</button>
+        <button type="button" id="addBook">Add Book</button>
+        <button type="button" id="removeBook">Remove Book</button>
+        <form id="inputBook" class="flex flex-col">
+            <label for="inputTitle">Input title of the Book</label>
+            <input type="text" name="inputTitle" id="inputTitle" class="border border-solid border-sky-300 rounded-md">
+            <label for="inputAuthor">Input author of the book</label>
+            <input type="text" name="inputAuthor" id="inputAuthor" class="border border-solid border-sky-300 rounded-md">
+            <label for="inputPages">Input author of the book</label>
+            <input type="text" name="inputPages" id="inputPages" class="border border-solid border-sky-300 rounded-md">
+            <p>Have you read the book?</p>
+            <div>
+                <label for="inputReadYes">Yes</label>
+                <input type="radio" name="inputRead" id="inputReadYes" value="yes">
+            </div>
+            <div>
+                <label for="inputReadNo">No</label>
+                <input type="radio" name="inputRead" id="inputReadNo" value="no">
+            </div>
+            <input type="submit" value="Submit" id="submitButton">
+        </form>
         <footer class="absolute bottom-0 w-full flex items-center justify-center bg-slate-400 p-4">
             <p class="text-xl text-white font-light">Copyrights &copy; 2023 Emmanuel Kimaru</p>
         </footer>
