@@ -34,9 +34,10 @@ class Book {
         this.title = title;
         this.author = author;
         this.pages = pages;
-        if (read === true) {
+        if (read === 'true') {
             this.read = 'Read';
         } else {
+            console.log(read);
             this.read = 'Unread';
         };
     }
@@ -52,7 +53,13 @@ function addBook(title, author, pages, read) {
 }
 
 function displayLibrary() {
-    // pass
+    listBooks.textContent = '';
+    for (let i = 0; i < library.length; i++) {
+        let book = library[i];
+        let p = createElement('p');
+        p.textContent = book.info();
+        listBooks.appendChild(p);
+    }
 }
 
 submitBook.addEventListener('click', () => {
