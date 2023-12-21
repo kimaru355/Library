@@ -11,16 +11,16 @@
         <header class="flex justify-center items-center bg-sky-300 p-2">
             <h1 class="">My Library</h1>
         </header>
-        <div id="inputBook" class="flex flex-col items-center justify-center gap-4">
+        <form action="#" id="inputBook" class="flex flex-col items-center justify-center gap-4">
             <label for="inputTitle">Title</label>
-            <input type="text" name="inputTitle" id="inputTitle" class="border border-sky-300" required>
+            <input type="text" name="inputTitle" id="inputTitle" class="border border-sky-300" required value="test">
             <label for="inputAuthor">Author</label>
-            <input type="text" name="inputAuthor" id="inputAuthor" class="border border-sky-300" required>
+            <input type="text" name="inputAuthor" id="inputAuthor" class="border border-sky-300" required value="test">
             <label for="inputPages">Pages</label>
-            <input type="number" name="inputPages" id="inputPages" class="border border-sky-300" required min="1">
+            <input type="number" name="inputPages" id="inputPages" class="border border-sky-300" required min="1" value="1">
             <button type="button" class="bg-green-300 p-2 rounded-lg px-8" id="inputRead" value="true">Read</button>
-            <button type="submit">Submit</button>
-        </div>
+            <button type="submit" id="submitBook" class="bg-blue-300 p-2 px-8 rounded-lg">Submit</button>
+        </form>
         <div id="listBooks"></div>
         <footer class="absolute bottom-0 w-full p-1 bg-sky-300">
             <p class="text-center">Copyrights &copy; Emmanuel Kimaru 2023</p>
