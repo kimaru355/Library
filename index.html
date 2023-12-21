@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="./dist/output.css">
+</head>
+<body>
+    <div id="root" class="relative min-h-screen">
+        <header class="flex justify-center items-center bg-sky-300 p-2">
+            <h1 class="">My Library</h1>
+        </header>
+        <div id="inputBook" class="flex flex-col items-center justify-center gap-4">
+            <label for="inputTitle">Title</label>
+            <input type="text" name="inputTitle" id="inputTitle" class="border border-sky-300" required>
+            <label for="inputAuthor">Author</label>
+            <input type="text" name="inputAuthor" id="inputAuthor" class="border border-sky-300" required>
+            <label for="inputPages">Pages</label>
+            <input type="number" name="inputPages" id="inputPages" class="border border-sky-300" required min="1">
+            <button type="button" class="bg-green-300 p-2 rounded-lg px-8" id="inputRead" value="true">Read</button>
+            <button type="submit">Submit</button>
+        </div>
+        <div id="listBooks"></div>
+        <footer class="absolute bottom-0 w-full p-1 bg-sky-300">
+            <p class="text-center">Copyrights &copy; Emmanuel Kimaru 2023</p>
+        </footer>
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>
