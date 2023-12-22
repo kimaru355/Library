@@ -56,9 +56,25 @@ function displayLibrary() {
     listBooks.textContent = '';
     for (let i = 0; i < library.length; i++) {
         let book = library[i];
+        let div = createElement('div');
         let p = createElement('p');
+        let deleteButton = createElement('button');
+        let editButton = createElement('button');
+        let controls = createElement('div');
         p.textContent = book.info();
-        listBooks.appendChild(p);
+        deleteButton.textContent = 'Delete';
+        editButton.textContent = 'Edit';
+        editButton.setAttribute('type', 'button');
+        deleteButton.setAttribute('type', 'button');
+        div.classList.add('flex', 'justify-between', 'items-center', 'border', 'border-gray-300', 'p-4', 'my-4', 'rounded-lg', 'gap-4');
+        controls.classList.add('flex', 'gap-4');
+        deleteButton.classList.add('bg-red-300', 'text-white', 'p-2', 'rounded-lg');
+        editButton.classList.add('bg-blue-300', 'text-white', 'p-2', 'rounded-lg');
+        div.appendChild(p);
+        controls.appendChild(editButton);
+        controls.appendChild(deleteButton);
+        div.appendChild(controls);
+        listBooks.appendChild(div);
     }
 }
 
