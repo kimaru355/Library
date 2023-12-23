@@ -37,7 +37,6 @@ class Book {
         if (read === 'true') {
             this.read = 'Read';
         } else {
-            console.log(read);
             this.read = 'Unread';
         };
     }
@@ -88,14 +87,21 @@ function displayLibrary() {
                 author.setAttribute('type', 'text');
                 pages.setAttribute('type', 'number');
                 read.setAttribute('type', 'button');
+                title.setAttribute('id', `book-${i}-title`);
+                author.setAttribute('id', `book-${i}-author`);
+                pages.setAttribute('id', `book-${i}-pages`);
+                read.setAttribute('id', `book-${i}-read`);
                 title.value = book.title;
                 author.value = book.author;
                 pages.value = book.pages;
                 read.textContent = 'Read';
+                read.value = true;
                 read.addEventListener('click', () => {
                     if (read.classList.toggle('bg-red-300')) {
+                        read.value = false;
                         read.textContent = 'Unread';
                     } else {
+                        read.value = true;
                         read.textContent = 'Read';
                     };
                 });
@@ -113,8 +119,15 @@ function displayLibrary() {
                 editBook.insertBefore(info, controls);
                 editButton.textContent = 'Save';
             } else {
+                title = document.querySelector(`#book-${i}-title`);
+                author = document.querySelector(`#book-${i}-author`);
+                pages = document.querySelector(`#book-${i}-pages`);
+                read = document.querySelector(`#book-${i}-read`);
                 editBook.removeChild(info);
                 info = createElement('p');
+                book = new Book(title.value, author.value, pages.value, read.value);
+                library.splice(i, 1, book);
+                info.textContent = `${book.title} by ${book.author}, ${book.pages} pages, ${book.read}`;
                 editBook.insertBefore(info, controls);
                 editButton.textContent = 'Edit';
             };
