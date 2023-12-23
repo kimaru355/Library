@@ -146,6 +146,12 @@ function displayLibrary() {
 }
 
 submitBook.addEventListener('click', () => {
+    if (inputTitle.value === '' || inputAuthor.value === '' || inputPages.value === '') {
+        return;
+    };
     addBook(inputTitle.value, inputAuthor.value, inputPages.value, inputRead.value);
     displayLibrary();
+    inputTitle.value = '';
+    inputAuthor.value = '';
+    inputPages.value = '';
 });
